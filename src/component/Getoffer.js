@@ -27,11 +27,11 @@ const Getofffer = () => {
         {
           supportedMethods: ['https://tez.google.com/pay'],
           data: {
-            pa: 'fcbizipr1zq@freecharge',  // Replace with your Merchant UPI ID
-            pn: 'biryani by saul',  // Replace with your Merchant Name
-            tr: 'RZPP0hDkQOcTq7YGaqrv2',  // Your custom transaction reference ID
+            pa: 'jaiswalsweets265786.rzp@icici',  // Replace with your Merchant UPI ID
+            pn: 'JaiswalSweets',  // Replace with your Merchant Name
+            tr: 'RZPPA3nUttSp9Uv04qrv2',  // Your custom transaction reference ID
             url: 'https://yourwebsite.com/order/1234ABCD',  // URL of the order in your website
-            mc: '5331', // Your merchant category code
+            mc: '5945', // Your merchant category code
             tn: price == 389.99 ? "MobileRecharge For 1 Year | Daily 2GB | Unlimited Calling" : price == 279.99 ? "MobileRecharge For 6 Months | Daily 2GB | Unlimited Calling" : price == 249.99 ? "MobileRecharge For 84 Days | Daily 3GB | Unlimited Calling" : price == 199.99 ? "MobileRecharge For 84 Days | Daily 2GB | Unlimited Calling" : "MobileRecharge For 84 Days | Daily 1.5GB | Unlimited Calling", // Transaction note
           },
         }
