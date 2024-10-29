@@ -142,7 +142,7 @@ const Getofffer = () => {
 
 
   return (
-    <div>
+     <div>
 
       <div className="bg-white py-4 px-4 text-[13.4px] flex items-center justify-between">
         <div className="flex items-center">
@@ -163,89 +163,14 @@ const Getofffer = () => {
       <div className=" px-2 my-0 bg-blue-50 py-5">
         <h1 className="text-[20px] font-bold text-center  mt-[-2px]">Diwali Recharge offer + OTTs Free</h1>
       </div>
-    <div className="bg-white rounded-xl p-4 my-4 shadow-xl shadow-blue-100">
-          <div className="bg-rose-600 py-1 px-3 rounded text-white text-[10px] font-bold w-fit">Exclusive</div>
-          <div className="flex items-center justify-between my-2">
-            <div className="flex items-center text-[20px] font-bold text-slate-800">
-              <div>₹389</div>
-              <div className="ml-4 line-through text-slate-600">₹2499</div>
-            </div>
-            <div><img src={U5G} alt="" /></div>
-          </div>
-          <div className="flex items-center justify-between mt-3">
-            <div className="">
-              <div className="text-slate-600 text-[13px]">VALIDITY</div>
-              <div className="text-slate-800 text-[13px] font-bold">12 month</div>
-            </div>
-            <div className="">
-              <div className="text-slate-600 text-[13px]">DATA</div>
-              <div className="text-slate-800 text-[13px] font-bold">2.0 GB/day</div>
-            </div>
-            <div className="">
-              <div className="text-slate-600 text-[13px]">Voice</div>
-              <div className="text-slate-800 text-[13px] font-bold">Unlimited</div>
-            </div>
-            <div className="">
-              <div className="text-slate-600 text-[13px]">SMS</div>
-              <div className="text-slate-800 text-[13px] font-bold">100/day</div>
-            </div>
-          </div>
-           <div style={{ marginTop: '10px' }}>
-    <div className="text-slate-600 text-[13px]">SUBSCRIPTION</div>
-    <div
-        className="flex items-center"
-        style={{ gap: '10px', marginTop: '2px' }}
-    >
-        <img
-            src="https://diwaligift.online/assets/website/images/jiotv.svg"
-            alt=""
-            className="mx-1"
-            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
-        />
-        <img
-            src="https://diwaligift.online/assets/website/images/jiocinema.svg"
-            alt=""
-            className="mx-1"
-            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
-        />
-        <img
-            src="https://diwaligift.online/assets/website/images/netflix.svg"
-            alt=""
-            className="mx-1"
-            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
-        />
-        <img
-            src="https://diwaligift.online/assets/website/images/amazonprime.svg"
-            alt=""
-            className="mx-1"
-            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
-        />
-        <img
-            src="https://diwaligift.online/assets/website/images/disney.svg"
-            alt=""
-            className="mx-1"
-            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
-        />
-        <img
-            src="https://diwaligift.online/assets/website/images/sony.svg"
-            alt=""
-            className="mx-1"
-            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
-        />
-    </div>
-</div>
-
-          <div className="mt-5">
-            <button onClick={() => setPrice(389.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
-          </div>
-        </div>
+    
       <div className="px-5 bg-white pt-1">
         <div className="bg-white rounded-xl p-4 my-4 shadow-xl shadow-blue-100">
           <div className="bg-rose-600 py-1 px-3 rounded text-white text-[10px] font-bold w-fit">Special Offer</div>
           <div className="flex items-center justify-between my-2">
             <div className="flex items-center text-[20px] font-bold text-slate-800">
-              <div>₹149</div>
-              <div className="ml-4 line-through text-slate-600">₹749</div>
+              <div>₹389</div>
+              <div className="ml-4 line-through text-slate-600">₹2499</div>
             </div>
             <div><img src={U5G} alt="" /></div>
           </div>
@@ -315,7 +240,7 @@ const Getofffer = () => {
 
   
           <div className="mt-5">
-            <button onClick={() => setPrice(149.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
+            <button onClick={() => setPrice(389.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
           </div>
         </div>
         <div className="bg-white rounded-xl p-4 my-4 shadow-xl shadow-blue-100">
@@ -546,7 +471,83 @@ const Getofffer = () => {
             <button onClick={() => setPrice(279.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
           </div>
         </div>
-        
+        <div className="bg-white rounded-xl p-4 my-4 shadow-xl shadow-blue-100">
+          <div className="bg-rose-600 py-1 px-3 rounded text-white text-[10px] font-bold w-fit">Exclusive</div>
+          <div className="flex items-center justify-between my-2">
+            <div className="flex items-center text-[20px] font-bold text-slate-800">
+              <div>₹149</div>
+              <div className="ml-4 line-through text-slate-600">₹749</div>
+            </div>
+            <div><img src={U5G} alt="" /></div>
+          </div>
+          <div className="flex items-center justify-between mt-3">
+            <div className="">
+              <div className="text-slate-600 text-[13px]">VALIDITY</div>
+              <div className="text-slate-800 text-[13px] font-bold">12 month</div>
+            </div>
+            <div className="">
+              <div className="text-slate-600 text-[13px]">DATA</div>
+              <div className="text-slate-800 text-[13px] font-bold">2.0 GB/day</div>
+            </div>
+            <div className="">
+              <div className="text-slate-600 text-[13px]">Voice</div>
+              <div className="text-slate-800 text-[13px] font-bold">Unlimited</div>
+            </div>
+            <div className="">
+              <div className="text-slate-600 text-[13px]">SMS</div>
+              <div className="text-slate-800 text-[13px] font-bold">100/day</div>
+            </div>
+          </div>
+           <div style={{ marginTop: '10px' }}>
+    <div className="text-slate-600 text-[13px]">SUBSCRIPTION</div>
+    <div
+        className="flex items-center"
+        style={{ gap: '10px', marginTop: '2px' }}
+    >
+        <img
+            src="https://diwaligift.online/assets/website/images/jiotv.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/jiocinema.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/netflix.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/amazonprime.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/disney.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/sony.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+    </div>
+</div>
+
+          <div className="mt-5">
+            <button onClick={() => setPrice(149.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
+          </div>
+        </div>
+      </div>
       <div>
 
       </div>
