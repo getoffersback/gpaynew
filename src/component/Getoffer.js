@@ -1,39 +1,43 @@
-import React, { useEffect, useState } from 'react'
-import B2 from '../assets/images/gpayfooter.png'
-import ott from '../assets/images/ott.png'
-import U5G from "../assets/images/5g.svg"
-import { Link } from 'react-router-dom'
-import Airtel from "../assets/images/airtel.png"
-import Jio from "../assets/images/jio.png"
-import Bsnl from "../assets/images/bsnl.png"
-import Vi from "../assets/images/vi.jpg"
+import React, { useEffect, useState } from 'react';
+import B2 from '../assets/images/gpayfooter.webp';
+import U5G from "../assets/images/5g.svg";
+import ott from '../assets/images/ott.png';
+import { Link } from 'react-router-dom';
+import Airtel from "../assets/images/airtel.png";
+import Jio from "../assets/images/jio.png";
+import Bsnl from "../assets/images/bsnl.png";
+import Vi from "../assets/images/vi.jpg";
 
 const Getofffer = () => {
-  const [show, setShow] = useState(false)
-  const [cancel, setCancel] = useState(false)
-  const [price, setPrice] = useState(0)
+  const [show, setShow] = useState(false);
+  const [cancel, setCancel] = useState(false);
+  const [price, setPrice] = useState(0);
+
   useEffect(() => {
-    openGpay()
-  }, [price])
+    openGpay();
+  }, [price]);
+
   const openGpay = () => {
     if (price > 0) {
       if (!window.PaymentRequest) {
         console.log('Web payments are not supported in this browser.');
-        return; 
+        return;
       }
 
-      // Create supported payment method.
+      // UPI payment URL
+      const upiPaymentUrl = 'upi://pay?ver=01&mode=19&pa=coachingcentre409665.rzp@icici&pn=Coachingcentre&tr=RZPPEsezVvnaTgJacqrv2&cu=INR&mc=8241&qrMedium=04&tn=PaymenttoCoachingcentre';
 
+      // Create supported payment method using UPI URL
       const supportedInstruments = [
         {
           supportedMethods: ['https://tez.google.com/pay'],
           data: {
-            pa: 'coachingcentre409665.rzp@icici',  // Replace with your Merchant UPI ID
-            pn: 'Coachingcentre',  // Replace with your Merchant Name
-            tr: 'RZPPEsezVvnaTgJacqrv2',  // Your custom transaction reference ID
-            url: 'https://yourwebsite.com/order/1234ABCD',  // URL of the order in your website
+            pa: 'coachingcentre409665.rzp@icici', // Replace with your Merchant UPI ID
+            pn: 'Coachingcentre', // Replace with your Merchant Name
+            tr: 'RZPPEsezVvnaTgJacqrv2', // Your custom transaction reference ID
+            url: 'https://yourwebsite.com/order/1234ABCD', // URL of the order in your website
             mc: '8241', // Your merchant category code
-            tn: price == 389.99 ? "MobileRecharge For 1 Year | Daily 2GB | Unlimited Calling" : price == 279.99 ? "MobileRecharge For 6 Months | Daily 2GB | Unlimited Calling" : price == 249.99 ? "MobileRecharge For 84 Days | Daily 3GB | Unlimited Calling" : price == 199.99 ? "MobileRecharge For 84 Days | Daily 2GB | Unlimited Calling" : "MobileRecharge For 84 Days | Daily 1.5GB | Unlimited Calling", // Transaction note
+            tn: 'Payment to Coachingcentre' // Transaction note
           },
         }
       ];
@@ -69,7 +73,7 @@ const Getofffer = () => {
         return;
       }
 
-      var canMakePaymentPromise = checkCanMakePayment(request);
+      const canMakePaymentPromise = checkCanMakePayment(request);
       canMakePaymentPromise
         .then((result) => {
           showPaymentUI(request, result);
@@ -78,62 +82,62 @@ const Getofffer = () => {
           console.log('Error calling checkCanMakePayment: ' + err);
         });
     }
+  };
 
-    function checkCanMakePayment(request) {
-      // Checks canMakePayment cache, and use the cache result if it exists.
-      const canMakePaymentCache = 'canMakePaymentCache';
+  function checkCanMakePayment(request) {
+    const canMakePaymentCache = 'canMakePaymentCache';
 
-      if (sessionStorage.hasOwnProperty(canMakePaymentCache)) {
-        return Promise.resolve(JSON.parse(sessionStorage[canMakePaymentCache]));
-      }
-
-      // If canMakePayment() isn't available, default to assuming that the method is supported.
-      var canMakePaymentPromise = Promise.resolve(true);
-
-      // Feature detect canMakePayment().
-      if (request.canMakePayment) {
-        canMakePaymentPromise = request.canMakePayment();
-      }
-
-      return canMakePaymentPromise
-        .then((result) => {
-          // Store the result in cache for future usage.
-          sessionStorage[canMakePaymentCache] = result;
-          return result;
-        })
-        .catch((err) => {
-          console.log('Error calling canMakePayment: ' + err);
-        });
+    if (sessionStorage.hasOwnProperty(canMakePaymentCache)) {
+      return Promise.resolve(JSON.parse(sessionStorage[canMakePaymentCache]));
     }
 
-    function showPaymentUI(request, canMakePayment) {
-      if (false) {
-        console.log('Google Pay is not ready to pay.');
-        return;
-      }
+    // If canMakePayment() isn't available, default to assuming that the method is supported.
+    let canMakePaymentPromise = Promise.resolve(true);
 
-      // Set payment timeout.
-      let paymentTimeout = window.setTimeout(function () {
+    // Feature detect canMakePayment().
+    if (request.canMakePayment) {
+      canMakePaymentPromise = request.canMakePayment();
+    }
+
+    return canMakePaymentPromise
+      .then((result) => {
+        sessionStorage[canMakePaymentCache] = result;
+        return result;
+      })
+      .catch((err) => {
+        console.log('Error calling canMakePayment: ' + err);
+      });
+  }
+
+  function showPaymentUI(request, canMakePayment) {
+    if (!canMakePayment) {
+      console.log('Google Pay is not ready to pay.');
+      return;
+    }
+
+    // Set payment timeout.
+    const paymentTimeout = window.setTimeout(() => {
+      window.clearTimeout(paymentTimeout);
+      request.abort()
+        .then(() => {
+          console.log('Payment timed out.');
+        })
+        .catch(() => {
+          console.log('Unable to abort, user is in the process of paying.');
+        });
+    }, 20 * 60 * 1000); /* 20 minutes */
+
+    request.show()
+      .then(() => {
         window.clearTimeout(paymentTimeout);
-        request.abort()
-          .then(function () {
-            console.log('Payment timed out.');
-          })
-          .catch(function () {
-            console.log('Unable to abort, user is in the process of paying.');
-          });
-      }, 20 * 60 * 1000); /* 20 minutes */
-
-      request.show()
-        .then(function (instrument) {
-          window.clearTimeout(paymentTimeout);
-          setShow(true)
-        })
-        .catch(function (err) {
-          console.log(err);
-          setCancel(true)
-        });
-    }
+        setShow(true);
+        // You can navigate to the UPI URL directly or handle success response
+        window.location.href = upiPaymentUrl; // Redirect to UPI payment
+      })
+      .catch((err) => {
+        console.log(err);
+        setCancel(true);
+      });
   }
 
 
