@@ -239,7 +239,6 @@ const Getofffer = () => {
             <button onClick={() => setPrice(389.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
           </div>
         </div>
-      </div>
       <div className="px-5 bg-white pt-1">
         <div className="bg-white rounded-xl p-4 my-4 shadow-xl shadow-blue-100">
           <div className="bg-rose-600 py-1 px-3 rounded text-white text-[10px] font-bold w-fit">Special Offer</div>
