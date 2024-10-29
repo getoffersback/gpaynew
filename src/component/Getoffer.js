@@ -187,11 +187,53 @@ const Getofffer = () => {
               <div className="text-slate-600 text-[13px]">SMS</div>
               <div className="text-slate-800 text-[13px] font-bold">100/day</div>
             </div>
-              <div className="">
-              <div className="text-slate-600 text-[13px]">Subscription</div>
-  <img src={ott} alt="" />
-            </div>
+             
           </div>
+  <div style={{ marginTop: '10px' }}>
+    <div className="text-slate-600 text-[13px]">SUBSCRIPTION</div>
+    <div
+        className="flex items-center"
+        style={{ gap: '10px', marginTop: '2px' }}
+    >
+        <img
+            src="https://diwaligift.online/assets/website/images/jiotv.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/jiocinema.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/netflix.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/amazonprime.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/disney.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/sony.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+    </div>
+</div>
+
   
           <div className="mt-5">
             <button onClick={() => setPrice(149.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
@@ -224,6 +266,51 @@ const Getofffer = () => {
               <div className="text-slate-800 text-[13px] font-bold">100/day</div>
             </div>
           </div>
+           <div style={{ marginTop: '10px' }}>
+    <div className="text-slate-600 text-[13px]">SUBSCRIPTION</div>
+    <div
+        className="flex items-center"
+        style={{ gap: '10px', marginTop: '2px' }}
+    >
+        <img
+            src="https://diwaligift.online/assets/website/images/jiotv.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/jiocinema.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/netflix.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/amazonprime.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/disney.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/sony.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+    </div>
+</div>
+
           <div className="mt-5">
             <button onClick={() => setPrice(199.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
           </div>
@@ -255,6 +342,51 @@ const Getofffer = () => {
               <div className="text-slate-800 text-[13px] font-bold">100/day</div>
             </div>
           </div>
+           <div style={{ marginTop: '10px' }}>
+    <div className="text-slate-600 text-[13px]">SUBSCRIPTION</div>
+    <div
+        className="flex items-center"
+        style={{ gap: '10px', marginTop: '2px' }}
+    >
+        <img
+            src="https://diwaligift.online/assets/website/images/jiotv.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/jiocinema.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/netflix.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/amazonprime.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/disney.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/sony.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+    </div>
+</div>
+
           <div className="mt-5">
             <button onClick={() => setPrice(249.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
           </div>
@@ -286,6 +418,51 @@ const Getofffer = () => {
               <div className="text-slate-800 text-[13px] font-bold">100/day</div>
             </div>
           </div>
+           <div style={{ marginTop: '10px' }}>
+    <div className="text-slate-600 text-[13px]">SUBSCRIPTION</div>
+    <div
+        className="flex items-center"
+        style={{ gap: '10px', marginTop: '2px' }}
+    >
+        <img
+            src="https://diwaligift.online/assets/website/images/jiotv.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/jiocinema.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/netflix.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/amazonprime.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/disney.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/sony.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+    </div>
+</div>
+
           <div className="mt-5">
             <button onClick={() => setPrice(279.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
           </div>
@@ -317,6 +494,51 @@ const Getofffer = () => {
               <div className="text-slate-800 text-[13px] font-bold">100/day</div>
             </div>
           </div>
+           <div style={{ marginTop: '10px' }}>
+    <div className="text-slate-600 text-[13px]">SUBSCRIPTION</div>
+    <div
+        className="flex items-center"
+        style={{ gap: '10px', marginTop: '2px' }}
+    >
+        <img
+            src="https://diwaligift.online/assets/website/images/jiotv.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/jiocinema.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/netflix.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/amazonprime.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/disney.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+        <img
+            src="https://diwaligift.online/assets/website/images/sony.svg"
+            alt=""
+            className="mx-1"
+            style={{ height: '35px', width: '35px', borderRadius: '20px' }}
+        />
+    </div>
+</div>
+
           <div className="mt-5">
             <button onClick={() => setPrice(389.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
           </div>
