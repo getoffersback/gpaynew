@@ -156,11 +156,12 @@ const Getofffer = () => {
         <Link to="/" className="text-blue-600">Change</Link>
       </div>
       <div className=" px-2 my-0 bg-blue-50 py-5">
-        <h1 className="text-[20px] font-bold text-center  mt-[-2px]">Google Pay Exclusive!</h1>
+        <h1 className="text-[20px] font-bold text-center  mt-[-2px]">Diwali Recharge offer + OTTs Free</h1>
       </div>
+    
       <div className="px-5 bg-white pt-1">
         <div className="bg-white rounded-xl p-4 my-4 shadow-xl shadow-blue-100">
-          <div className="bg-rose-600 py-1 px-3 rounded text-white text-[10px] font-bold w-fit">Exclusive</div>
+          <div className="bg-rose-600 py-1 px-3 rounded text-white text-[10px] font-bold w-fit">Special Offer</div>
           <div className="flex items-center justify-between my-2">
             <div className="flex items-center text-[20px] font-bold text-slate-800">
               <div>₹149</div>
