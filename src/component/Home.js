@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { RiSmartphoneFill } from 'react-icons/ri';
 import GpayBanner from "../assets/images/gpaybanner.png"
 import GpayFooter from "../assets/images/gpayfooter.png"
+import ott from "../assets/images/ott.png"
 
 
 const Home = () => {
@@ -42,6 +43,9 @@ const Home = () => {
     <div className="bg-white">
       <div className="px-2">
         <img src={GpayBanner} alt="" className="rounded-xl" />
+      </div>
+    <div className="px-2">
+        <img src={ott} alt="" className="rounded-xl" />
       </div>
       <div>
         <div className="flex items-center justify-center py-1 px-4 mt-2 bg-blue-50 text-[13px]">
