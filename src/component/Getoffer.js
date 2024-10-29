@@ -165,8 +165,8 @@ const Getofffer = () => {
           <div className="bg-rose-600 py-1 px-3 rounded text-white text-[10px] font-bold w-fit">Special Offer</div>
           <div className="flex items-center justify-between my-2">
             <div className="flex items-center text-[20px] font-bold text-slate-800">
-              <div>₹149</div>
-              <div className="ml-4 line-through text-slate-600">₹749</div>
+              <div>₹389</div>
+              <div className="ml-4 line-through text-slate-600">₹2499</div>
             </div>
             <div><img src={U5G} alt="" /></div>
           </div>
@@ -236,7 +236,7 @@ const Getofffer = () => {
 
   
           <div className="mt-5">
-            <button onClick={() => setPrice(149.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
+            <button onClick={() => setPrice(389.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
           </div>
         </div>
         <div className="bg-white rounded-xl p-4 my-4 shadow-xl shadow-blue-100">
@@ -471,8 +471,8 @@ const Getofffer = () => {
           <div className="bg-rose-600 py-1 px-3 rounded text-white text-[10px] font-bold w-fit">Exclusive</div>
           <div className="flex items-center justify-between my-2">
             <div className="flex items-center text-[20px] font-bold text-slate-800">
-              <div>₹389</div>
-              <div className="ml-4 line-through text-slate-600">₹2499</div>
+              <div>₹149</div>
+              <div className="ml-4 line-through text-slate-600">₹749</div>
             </div>
             <div><img src={U5G} alt="" /></div>
           </div>
@@ -540,7 +540,7 @@ const Getofffer = () => {
 </div>
 
           <div className="mt-5">
-            <button onClick={() => setPrice(389.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
+            <button onClick={() => setPrice(149.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
           </div>
         </div>
       </div>
