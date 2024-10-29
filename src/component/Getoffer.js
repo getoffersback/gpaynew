@@ -173,11 +173,11 @@ const Getofffer = () => {
           <div className="flex items-center justify-between mt-3">
             <div className="">
               <div className="text-slate-600 text-[13px]">VALIDITY</div>
-              <div className="text-slate-800 text-[13px] font-bold">84 days</div>
+              <div className="text-slate-800 text-[13px] font-bold"> 12 months</div>
             </div>
             <div className="">
               <div className="text-slate-600 text-[13px]">DATA</div>
-              <div className="text-slate-800 text-[13px] font-bold">1.5 GB/day</div>
+              <div className="text-slate-800 text-[13px] font-bold">2 GB/day</div>
             </div>
             <div className="">
               <div className="text-slate-600 text-[13px]">Voice</div>
@@ -479,11 +479,11 @@ const Getofffer = () => {
           <div className="flex items-center justify-between mt-3">
             <div className="">
               <div className="text-slate-600 text-[13px]">VALIDITY</div>
-              <div className="text-slate-800 text-[13px] font-bold">12 month</div>
+              <div className="text-slate-800 text-[13px] font-bold">84 days</div>
             </div>
             <div className="">
               <div className="text-slate-600 text-[13px]">DATA</div>
-              <div className="text-slate-800 text-[13px] font-bold">2.0 GB/day</div>
+              <div className="text-slate-800 text-[13px] font-bold">1.5 GB/day</div>
             </div>
             <div className="">
               <div className="text-slate-600 text-[13px]">Voice</div>
