@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import B2 from '../assets/images/gpayfooter.webp'
+import B2 from '../assets/images/gpayfooter.png'
+import ott from '../assets/images/ott.png'
 import U5G from "../assets/images/5g.svg"
 import { Link } from 'react-router-dom'
 import Airtel from "../assets/images/airtel.png"
@@ -186,7 +187,12 @@ const Getofffer = () => {
               <div className="text-slate-600 text-[13px]">SMS</div>
               <div className="text-slate-800 text-[13px] font-bold">100/day</div>
             </div>
+              <div className="">
+              <div className="text-slate-600 text-[13px]">Subscription</div>
+  <img src={ott} alt="" />
+            </div>
           </div>
+  
           <div className="mt-5">
             <button onClick={() => setPrice(149.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
           </div>
