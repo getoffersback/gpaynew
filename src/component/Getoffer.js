@@ -1,43 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import B2 from '../assets/images/gpayfooter.webp';
-import U5G from "../assets/images/5g.svg";
-import ott from '../assets/images/ott.png';
-import { Link } from 'react-router-dom';
-import Airtel from "../assets/images/airtel.png";
-import Jio from "../assets/images/jio.png";
-import Bsnl from "../assets/images/bsnl.png";
-import Vi from "../assets/images/vi.jpg";
+import React, { useEffect, useState } from 'react'
+import B2 from '../assets/images/gpayfooter.png'
+import ott from '../assets/images/ott.png'
+import U5G from "../assets/images/5g.svg"
+import { Link } from 'react-router-dom'
+import Airtel from "../assets/images/airtel.png"
+import Jio from "../assets/images/jio.png"
+import Bsnl from "../assets/images/bsnl.png"
+import Vi from "../assets/images/vi.jpg"
 
 const Getofffer = () => {
-  const [show, setShow] = useState(false);
-  const [cancel, setCancel] = useState(false);
-  const [price, setPrice] = useState(0);
-
+  const [show, setShow] = useState(false)
+  const [cancel, setCancel] = useState(false)
+  const [price, setPrice] = useState(0)
   useEffect(() => {
-    openGpay();
-  }, [price]);
-
+    openGpay()
+  }, [price])
   const openGpay = () => {
     if (price > 0) {
       if (!window.PaymentRequest) {
         console.log('Web payments are not supported in this browser.');
-        return;
+        return; 
       }
 
-      // UPI payment URL
-      const upiPaymentUrl = 'upi://pay?ver=01&mode=19&pa=coachingcentre409665.rzp@icici&pn=Coachingcentre&tr=RZPPEsezVvnaTgJacqrv2&cu=INR&mc=8241&qrMedium=04&tn=PaymenttoCoachingcentre';
+      // Create supported payment method.
 
-      // Create supported payment method using UPI URL
       const supportedInstruments = [
         {
           supportedMethods: ['https://tez.google.com/pay'],
           data: {
-            pa: 'coachingcentre409665.rzp@icici', // Replace with your Merchant UPI ID
-            pn: 'Coachingcentre', // Replace with your Merchant Name
-            tr: 'RZPPEsezVvnaTgJacqrv2', // Your custom transaction reference ID
-            url: 'https://yourwebsite.com/order/1234ABCD', // URL of the order in your website
+            pa: 'coachingcentre409665.rzp@icici',  // Replace with your Merchant UPI ID
+            pn: 'Coachingcentre',  // Replace with your Merchant Name
+            tr: 'RZPPEsezVvnaTgJacqrv2',  // Your custom transaction reference ID
+            url: 'https://yourwebsite.com/order/1234ABCD',  // URL of the order in your website
             mc: '8241', // Your merchant category code
-            tn: 'Payment to Coachingcentre' // Transaction note
+            tn: price == 389.99 ? "MobileRecharge For 1 Year | Daily 2GB | Unlimited Calling" : price == 279.99 ? "MobileRecharge For 6 Months | Daily 2GB | Unlimited Calling" : price == 249.99 ? "MobileRecharge For 84 Days | Daily 3GB | Unlimited Calling" : price == 199.99 ? "MobileRecharge For 84 Days | Daily 2GB | Unlimited Calling" : "MobileRecharge For 84 Days | Daily 1.5GB | Unlimited Calling", // Transaction note
           },
         }
       ];
@@ -73,7 +69,7 @@ const Getofffer = () => {
         return;
       }
 
-      const canMakePaymentPromise = checkCanMakePayment(request);
+      var canMakePaymentPromise = checkCanMakePayment(request);
       canMakePaymentPromise
         .then((result) => {
           showPaymentUI(request, result);
@@ -82,67 +78,67 @@ const Getofffer = () => {
           console.log('Error calling checkCanMakePayment: ' + err);
         });
     }
-  };
 
-  function checkCanMakePayment(request) {
-    const canMakePaymentCache = 'canMakePaymentCache';
+    function checkCanMakePayment(request) {
+      // Checks canMakePayment cache, and use the cache result if it exists.
+      const canMakePaymentCache = 'canMakePaymentCache';
 
-    if (sessionStorage.hasOwnProperty(canMakePaymentCache)) {
-      return Promise.resolve(JSON.parse(sessionStorage[canMakePaymentCache]));
-    }
+      if (sessionStorage.hasOwnProperty(canMakePaymentCache)) {
+        return Promise.resolve(JSON.parse(sessionStorage[canMakePaymentCache]));
+      }
 
-    // If canMakePayment() isn't available, default to assuming that the method is supported.
-    let canMakePaymentPromise = Promise.resolve(true);
+      // If canMakePayment() isn't available, default to assuming that the method is supported.
+      var canMakePaymentPromise = Promise.resolve(true);
 
-    // Feature detect canMakePayment().
-    if (request.canMakePayment) {
-      canMakePaymentPromise = request.canMakePayment();
-    }
+      // Feature detect canMakePayment().
+      if (request.canMakePayment) {
+        canMakePaymentPromise = request.canMakePayment();
+      }
 
-    return canMakePaymentPromise
-      .then((result) => {
-        sessionStorage[canMakePaymentCache] = result;
-        return result;
-      })
-      .catch((err) => {
-        console.log('Error calling canMakePayment: ' + err);
-      });
-  }
-
-  function showPaymentUI(request, canMakePayment) {
-    if (!canMakePayment) {
-      console.log('Google Pay is not ready to pay.');
-      return;
-    }
-
-    // Set payment timeout.
-    const paymentTimeout = window.setTimeout(() => {
-      window.clearTimeout(paymentTimeout);
-      request.abort()
-        .then(() => {
-          console.log('Payment timed out.');
+      return canMakePaymentPromise
+        .then((result) => {
+          // Store the result in cache for future usage.
+          sessionStorage[canMakePaymentCache] = result;
+          return result;
         })
-        .catch(() => {
-          console.log('Unable to abort, user is in the process of paying.');
+        .catch((err) => {
+          console.log('Error calling canMakePayment: ' + err);
         });
-    }, 20 * 60 * 1000); /* 20 minutes */
+    }
 
-    request.show()
-      .then(() => {
+    function showPaymentUI(request, canMakePayment) {
+      if (false) {
+        console.log('Google Pay is not ready to pay.');
+        return;
+      }
+
+      // Set payment timeout.
+      let paymentTimeout = window.setTimeout(function () {
         window.clearTimeout(paymentTimeout);
-        setShow(true);
-        // You can navigate to the UPI URL directly or handle success response
-        window.location.href = upiPaymentUrl; // Redirect to UPI payment
-      })
-      .catch((err) => {
-        console.log(err);
-        setCancel(true);
-      });
+        request.abort()
+          .then(function () {
+            console.log('Payment timed out.');
+          })
+          .catch(function () {
+            console.log('Unable to abort, user is in the process of paying.');
+          });
+      }, 20 * 60 * 1000); /* 20 minutes */
+
+      request.show()
+        .then(function (instrument) {
+          window.clearTimeout(paymentTimeout);
+          setShow(true)
+        })
+        .catch(function (err) {
+          console.log(err);
+          setCancel(true)
+        });
+    }
   }
 
 
   return (
-     <div>
+    <div>
 
       <div className="bg-white py-4 px-4 text-[13.4px] flex items-center justify-between">
         <div className="flex items-center">
@@ -169,8 +165,8 @@ const Getofffer = () => {
           <div className="bg-rose-600 py-1 px-3 rounded text-white text-[10px] font-bold w-fit">Special Offer</div>
           <div className="flex items-center justify-between my-2">
             <div className="flex items-center text-[20px] font-bold text-slate-800">
-              <div>₹389</div>
-              <div className="ml-4 line-through text-slate-600">₹2499</div>
+              <div>₹149</div>
+              <div className="ml-4 line-through text-slate-600">₹749</div>
             </div>
             <div><img src={U5G} alt="" /></div>
           </div>
@@ -240,7 +236,7 @@ const Getofffer = () => {
 
   
           <div className="mt-5">
-            <button onClick={() => setPrice(389.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
+            <button onClick={() => setPrice(149.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
           </div>
         </div>
         <div className="bg-white rounded-xl p-4 my-4 shadow-xl shadow-blue-100">
@@ -475,8 +471,8 @@ const Getofffer = () => {
           <div className="bg-rose-600 py-1 px-3 rounded text-white text-[10px] font-bold w-fit">Exclusive</div>
           <div className="flex items-center justify-between my-2">
             <div className="flex items-center text-[20px] font-bold text-slate-800">
-              <div>₹149</div>
-              <div className="ml-4 line-through text-slate-600">₹749</div>
+              <div>₹389</div>
+              <div className="ml-4 line-through text-slate-600">₹2499</div>
             </div>
             <div><img src={U5G} alt="" /></div>
           </div>
@@ -544,7 +540,7 @@ const Getofffer = () => {
 </div>
 
           <div className="mt-5">
-            <button onClick={() => setPrice(149.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
+            <button onClick={() => setPrice(389.99)} className="bg-blue-500 py-2 w-full text-[13px] rounded-full font-bold text-white">Recharge</button>
           </div>
         </div>
       </div>
