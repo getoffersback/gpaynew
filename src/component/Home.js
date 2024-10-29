@@ -3,7 +3,7 @@ import { FaClock } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom';
 import { RiSmartphoneFill } from 'react-icons/ri';
 import GpayBanner from "../assets/images/gpaybanner.png"
-import GpayFooter from "../assets/images/gpayfooter.webp"
+import GpayFooter from "../assets/images/gpayfooter.png"
 
 
 const Home = () => {
